@@ -1,21 +1,45 @@
+/* CSS HEX */
+root: {
+    --pale-purple: #e0d3deff;
+    --amethyst: #a06cd5ff;
+    --lime: #c3f73aff;
+    --russian-violet: #311847ff;
+    --dun: #cbb8a9ff;
+}
+
 /* General Styling--------------------------*/
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0 auto;
+    height: 100%;
+    background-color: #311847ff;
 }
 
 h1 {
-    font-family: 'montserratBold', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'saxMono', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     font-weight: bolder;
+    color: white;
 }
 
 h2, h3 {
-    font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'saxMono', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
 }
 
 h4 {
     line-height: 0.5em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+p, li {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
 }
 
 @font-face {
@@ -24,8 +48,13 @@ h4 {
 }
 
 @font-face {
-    font-family: "montserratBold";
-    src: url(./Fonts/MontserratAlternates-SemiBold.otf);
+    font-family: "saxMono";
+    src: url(./Fonts/saxmono.ttf);
+}
+
+@font-face {
+    font-family: "laneNar";
+    src: url(./Fonts/LANENAR.ttf);
 }
 
 /* Footer--------------------------*/
@@ -34,8 +63,7 @@ footer {
     box-sizing: border-box;
     text-align: center;
     padding: 50px;
-    margin-top: 20px;
-    background-color: #000;
+    background-color: #A06CD5;
     color: white;
 }
 
@@ -47,26 +75,26 @@ footer {
 .socialIcons a {
     text-decoration: none;
     padding: 10px;
-    background-color: white;
+    background-color: #311847;
     margin: 10px;
     border-radius: 50%;
 }
 
 .socialIcons a i {
     font-size: 2em;
-    color: black;
+    color: white;
     opacity: 0.9;
 }
 
 /* Hover Effect on Social Icons*/
 
 .socialIcons a:hover {
-    background-color: #111;
+    background-color: #C3F73A;
     transition: 0.5s;
 }
 
 .socialIcons a:hover i{
-    color: white;
+    color: black;
     transition: 0.5s;
 }
 
@@ -77,6 +105,28 @@ footer {
 
 /* Home--------------------------*/
 
+div.home {
+    background-image: url(./Pics/homeBg.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:left;
+    padding: 20px;
+}
+
+div.transbox {
+    padding: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.5);
+}
+
+@media screen and (max-width:375px){
+    div.home {
+        padding: 0;
+    }
+}
+
 /* About Me--------------------------*/
 
 .content-wrap {
@@ -86,7 +136,7 @@ footer {
 }
 
 .mypic {
-    max-width: 30%;
+    max-width: 80%;
     border-radius: 50%;
     padding: 0 60px;
 }
@@ -101,115 +151,115 @@ footer {
     display: flex;
 }
 
+.resume {
+    text-decoration: none;
+    color: #c3f73aff;
+    font-variant: small-caps;
+    font-size: x-large;
+}
+
+@media screen and (max-width:425px){
+    .mypic {
+        display: none;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
 /* Portfolio--------------------------*/
 
 .grid-wrapper {
     display: grid;
-    grid-template-columns: repeat (3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
 }
 
-.item-1 {
+.leftColumn {
     grid-column: 1/2;
+}
+
+.rightColumn {
+    grid-column: 2/3;
+}
+
+.row-1 {
     grid-row: 1;
 }
 
-.item-2 {
-    grid-column: 2/3;
-    grid-row: 1;
-}
-
-.item-3 {
-    grid-column: 1/2;
+.row-2 {
     grid-row: 2;
 }
 
-.item-4 {
-    grid-column: 2/3;
-    grid-row: 2;
+.row-3 {
+    grid-row: 3;
+}
+
+.row-4 {
+    grid-row: 4;
+}
+
+.row-5 {
+    grid-row: 5;
 }
 
 .thumbnail {
     border-radius: 10px;
     padding: 5px;
-    width: 750px;
+    max-width: 800px;
 }
 
 .thumbnail:hover {
-    box-shadow: 0 0 2px 1px RGBA(157,101,80,0.4);
+    box-shadow: 0 0 2px 1px rgba(224, 211, 222, 1);
     transition: 0.5s;
 }
 
 .button {
     border: none;
     border-radius: 15px;
-    background-color: black;
+    background-color: #A06CD5;
     color: white; 
     padding: 10px;
     text-align: center;
     text-decoration: none;
     display: block;
     font-size: small;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 4px 2px;
     transition-duration: 0.5s;
     cursor: pointer;
 }
 
 .button:hover {
-    background-color: white;
+    background-color: #E0D3DE;
     color: black;   
 }
 
 @media screen and (max-width:800px) {
 
-    .item-1 {
-        grid-column: 1;
-        grid-row: 1;
+    .grid-wrapper {
+        display: flex;
+        flex-direction: column;
     }
-
-    .item-2 {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .item-3 {
-        grid-column: 1;
-        grid-row: 3;
-        margin-top: 50px;
-    }
-
-    .item-4 {
-        grid-column: 1;
-        grid-row: 4;
-    }
-
-    .item-5 {
-        grid-column: 1;
-        grid-row: 5;
-        margin-top: 50px;
-    }
-
-    .item-6 {
-        grid-column: 1;
-        grid-row: 6;        
-    }
-
-    .item-7 {
-        grid-column: 1;
-        grid-row: 7;
-        margin-top: 50px;        
-    }
-
-    .item-8 {
-        grid-column: 1;
-        grid-row: 8;     
-    }
-
     
     .button {
         display: inline-flex;
     }
+
+    .thumbnail {
+        object-fit: inherit;
+        width: 100%;
+    }
+
+@media screen and (max-width:375px) {
+    .button {
+        display: block;
+    }    
+}
 }
 
 /* Contact--------------------------*/
@@ -226,30 +276,33 @@ input[type=text], select, textarea {
 }
 
 input[type=submit] {
-    background-color: lightgray;
-    color:#000;
+    background-color: #A06CD5;
+    color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
 }
 
 input[type=submit]:hover {
-    background-color: gray;
+    background-color: #C3F73A;
+    color: black;
+    transition-duration: 0.2s;
 }
 
 .contactForm {
     border-radius: 10px;
-    background-color: whitesmoke;
+    background-color: #E0D3DE;
     padding: 20px;
-    float: left;
 }
 
 /* Navigation--------------------------*/
 
 /* Background color for top nav */
 .topnav {
-    background-color: #333;
+    background-color: #A06CD5;
     overflow: hidden;
 }
 
@@ -262,20 +315,18 @@ input[type=submit]:hover {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    font-family: 'saxMono', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* font-variant: small-caps; */
+    font-weight: bold;
 }
 
 /* Color of links on hover */
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: #C3F73A;
     color: black;
-    transition: 0.8s;
+    transition: 0.3s;
 }
-  
-/* Add an active class to highlight the current page */
-.topnav a.active {
-    background-color: #04AA6D;
-    color: white;
-}
+
   
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
